@@ -27,16 +27,17 @@ module.exports = {
 
 async function genImg(file,src_dir,imgformat,pdffile){
   const options = {
-    density: 100,
+    quality: 100,
     saveFilename: pdffile,
-    savePath: src_dir,
+  savePath: src_dir,
     imgformat,
-    width: 600,
-    height: 600
+    width: 512,
+    height: 768,
   };
+                                
   const storeAsImage = fromPath(file, options);
   const pageToConvertAsImage = 1;
   
  let resultImage = await storeAsImage(pageToConvertAsImage)
- return resultImage
+  return resultImage
 }

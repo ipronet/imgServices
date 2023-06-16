@@ -17,3 +17,10 @@ exports.Convert = asynHandler(async (req, res, next) => {
     Data:file
   })
 });
+exports.Health = asynHandler(async (req, res, next) => {
+
+  res.send( {
+    Status: 1,
+    Message: `im ok`,
+  })
+});
